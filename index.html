@@ -1,21 +1,179 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <title> Regulated Financial Activities </title>
+  <title> Tech Interview Question 01 </title>
 </head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 <body>
-  <p id="introduction" class="intro"> <b> Following are a list of regulated activites by MAS: </b> </p>
-  <ol id="regList" class="regList">
-    <li class="regAct"> Type 1:Dealing in securities</li> <br>
-    <li class="regAct"> Type 2:Dealing in futures contracts</li> <br>
-    <li class="regAct"> Type 3: Leveraged foreign exchange trading</li> <br>
-    <li class="regAct"> Type 4: Advising on securities</li> <br>
-    <li class="regAct"> Type 5: Advising on futures contracts</li> <br>
-    <li class="regAct"> Type 6: Advising on corporate finance</li> <br>
-    <li class="regAct"> Type 7: Providing automated trading services</li> <br>
-    <li class="regAct"> Type 8: Securities margin financing</li> <br>
-    <li class="regAct"> Type 9: Asset management</li> <br>
-    <li class="regAct"> Type 10: Providing credit rating services</li> <br>
+  <div id="ide" class="ide">
+ 
+   <p> <b> Please find the online IDE environments as followed: </b> </p>
+ 
+  <ol>
+<li> MySQL: <a href= "http://sqlfiddle.com/#!9/275b21/1" target="blank"> http://sqlfiddle.com/#!9/275b21/1</a> </li> <br>
+<li> PostgreSQL: <a href= "http://sqlfiddle.com/#!17/c5c3b7/1" target="blank"> http://sqlfiddle.com/#!17/c5c3b7/1</a> </li> <br>
+<li> SQLite: <a href="http://sqlfiddle.com/#!7/c5c3b/1" target="blank"> http://sqlfiddle.com/#!7/c5c3b/1 </a> </li>
   </ol>
+ 
+  </div>
+ 
+  <hr>
+ 
+  <div id="question" class="question">
+
+   
+   <p>You would find the following 2 tables in your SQL online compiler:</p>
+
+   <p><u><b>Table 1: FUND_MANAGER</b></u></p>
+   <p><u>Description: </u></p>
+   <p> Details of fund manager for each fund. </p>
+   <p><u>Additional Details: </u></p>
+   <p> Each fund manager could only manage one fund. </p>
+   <p><u>Schema: </u></p>
+   <ul>
+<li>fund VARCHAR(500)</li>
+    <li>manager VARCHAR(500)</li>
+   </ul>
+      <p><u>Variable explanation: </u></p>
+   <ul>
+<li><strong>fund : </strong> fund name</li>
+<li><strong>manager : </strong> fund manager</li>
+   </ul>
+  <p><u>Table View: </u></p>
+
+<table>
+<tr>
+<th>fund</th>
+<th>manager</th>
+</tr>
+<tr>
+<td>Fund A</td>
+<td>Adam</td>
+</tr>
+<tr>
+<td>Fund B</td>
+<td>Nicole</td>
+</tr>
+<tr>
+<td>Fund C</td>
+<td>Alicia</td>
+</tr>
+</table>
+
+   <p><u><b>Table 2: FUND_PERFORMANCE</b></u></p>
+   <p><u>Description: </u></p>
+   <p> Time series data of fund performance for each fund. </p>
+   <p><u>Schema: </u></p>
+   <ul>
+<li>fund VARCHAR(500)</li>
+    <li>evaluation_year INT(10)</li>
+    <li>evaluation_month INT(10)</li>
+    <li>return_1y FLOAT(12)</li>
+   </ul>
+      <p><u>Variable explanation: </u></p>
+   <ul>
+<li><strong>fund : </strong> fund name</li>
+<li><strong>evaluation_year : </strong> the year which the performance data is captured</li>
+<li><strong>evaluation_month : </strong> the month which the performance data is captured</li>
+<li><strong>return_1y : </strong> 1-year return of the fund</li>
+   </ul>
+  <p><u>Table View: </u></p>
+
+<table>
+<tr>
+<th>fund</th>
+<th>evaluation_year</th>
+<th>evaluation_month</th>
+<th>return_1y</th>
+</tr>
+<tr>
+<td>Fund A</td>
+<td>2021</td>
+<td>1</td>
+<td>-0.28</td>
+</tr>
+<tr>
+<td>Fund A</td>
+<td>2021</td>
+<td>2</td>
+<td>0.25</td>
+</tr>
+<tr>
+<td>Fund A</td>
+<td>2021</td>
+<td>3</td>
+<td>0.28</td>
+</tr>
+<tr>
+<td>Fund B</td>
+<td>2021</td>
+<td>1</td>
+<td>-0.25</td>
+</tr>
+<tr>
+<td>Fund B</td>
+<td>2021</td>
+<td>2</td>
+<td>0.26</td>
+</tr>
+<tr>
+<td>Fund B</td>
+<td>2021</td>
+<td>3</td>
+<td>-0.05</td>
+</tr>
+<tr>
+<td>Fund C</td>
+<td>2021</td>
+<td>1</td>
+<td>0.12</td>
+</tr>
+<tr>
+<td>Fund C</td>
+<td>2021</td>
+<td>2</td>
+<td>-0.09</td>
+</tr>
+<tr>
+<td>Fund C</td>
+<td>2021</td>
+<td>3</td>
+<td>0.28</td>
+</tr>
+</table>
+
+   <hr>
+   <p><u><b>Task: </b></u></p>
+   <p>You would need to design a SQL query which tells which fund manager(s) generate(s) the best return on 2021 March. </p>
+   
+   <p><u><b>Expected Output: </b></u><p>
+    <table>
+<tr>
+<th>manager</th>
+</tr>
+<tr>
+<td>Adam</td>
+</tr>
+<tr>
+<td>Alicia</td>
+</tr>
+  </div>
+  <div id="empty" class="empty" >
+  </div>
 </body>
 </html>
