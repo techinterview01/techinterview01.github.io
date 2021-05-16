@@ -18,162 +18,134 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
-</style>
+</style>	
 <body>
   <div id="ide" class="ide">
- 
+  
    <p> <b> Please find the online IDE environments as followed: </b> </p>
- 
+  
   <ol>
-<li> MySQL: <a href= "http://sqlfiddle.com/#!9/275b21/1" target="blank"> http://sqlfiddle.com/#!9/275b21/1</a> </li> <br>
-<li> PostgreSQL: <a href= "http://sqlfiddle.com/#!17/c5c3b7/1" target="blank"> http://sqlfiddle.com/#!17/c5c3b7/1</a> </li> <br>
-<li> SQLite: <a href="http://sqlfiddle.com/#!7/c5c3b/1" target="blank"> http://sqlfiddle.com/#!7/c5c3b/1 </a> </li>
+	<li> MySQL: <a href= "http://sqlfiddle.com/#!9/a06c9f/4" target="blank"> Click here to access MySQL environment </a> </li> <br>
+	<li> PostgreSQL: <a href= "http://sqlfiddle.com/#!17/a06c9f/1" target="blank"> Click here to access PostgreSQL environment </a> </li> <br>
+	<li> SQLite: <a href="http://sqlfiddle.com/#!7/a06c9/1" target="blank">Click here to access SQLite environment</a> </li> 
   </ol>
- 
+  
   </div>
- 
+  
   <hr>
- 
+  
   <div id="question" class="question">
 
-   
-   <p>You would find the following 2 tables in your SQL online compiler:</p>
+    
+   <p>You would find the following table in your SQL online compiler:</p>
 
-   <p><u><b>Table 1: FUND_MANAGER</b></u></p>
+   <p><u><b>Table: FUND_PERFORMANCE</b></u></p>
    <p><u>Description: </u></p>
-   <p> Details of fund manager for each fund. </p>
-   <p><u>Additional Details: </u></p>
-   <p> Each fund manager could only manage one fund. </p>
+   <p> Monthly performance of all funds. </p>
    <p><u>Schema: </u></p>
    <ul>
-<li>fund VARCHAR(500)</li>
-    <li>manager VARCHAR(500)</li>
+	<li>fund 	VARCHAR(500)</li>
+    <li>evaluation_year 	INT(10)</li>
+    <li>evaluation_month 	INT(10)</li>
+    <li>fund_return 	FLOAT(12)</li>
    </ul>
       <p><u>Variable explanation: </u></p>
    <ul>
-<li><strong>fund : </strong> fund name</li>
-<li><strong>manager : </strong> fund manager</li>
+	<li><strong>fund : </strong> fund name</li>
+	<li><strong>evaluation_year : </strong> the year which the fund performance data is captured</li>
+	<li><strong>evaluation_month : </strong> the month which the fund performance data is captured</li>
+	<li><strong>fund_return : </strong> monthly return of the fund</li>
    </ul>
   <p><u>Table View: </u></p>
 
-<table>
-<tr>
-<th>fund</th>
-<th>manager</th>
-</tr>
-<tr>
-<td>Fund A</td>
-<td>Adam</td>
-</tr>
-<tr>
-<td>Fund B</td>
-<td>Nicole</td>
-</tr>
-<tr>
-<td>Fund C</td>
-<td>Alicia</td>
-</tr>
-</table>
-
-   <p><u><b>Table 2: FUND_PERFORMANCE</b></u></p>
-   <p><u>Description: </u></p>
-   <p> Time series data of fund performance for each fund. </p>
-   <p><u>Schema: </u></p>
-   <ul>
-<li>fund VARCHAR(500)</li>
-    <li>evaluation_year INT(10)</li>
-    <li>evaluation_month INT(10)</li>
-    <li>return_1y FLOAT(12)</li>
-   </ul>
-      <p><u>Variable explanation: </u></p>
-   <ul>
-<li><strong>fund : </strong> fund name</li>
-<li><strong>evaluation_year : </strong> the year which the performance data is captured</li>
-<li><strong>evaluation_month : </strong> the month which the performance data is captured</li>
-<li><strong>return_1y : </strong> 1-year return of the fund</li>
-   </ul>
-  <p><u>Table View: </u></p>
-
-<table>
-<tr>
-<th>fund</th>
-<th>evaluation_year</th>
-<th>evaluation_month</th>
-<th>return_1y</th>
-</tr>
-<tr>
-<td>Fund A</td>
-<td>2021</td>
-<td>1</td>
-<td>-0.28</td>
-</tr>
-<tr>
-<td>Fund A</td>
-<td>2021</td>
-<td>2</td>
-<td>0.25</td>
-</tr>
-<tr>
-<td>Fund A</td>
-<td>2021</td>
-<td>3</td>
-<td>0.28</td>
-</tr>
-<tr>
-<td>Fund B</td>
-<td>2021</td>
-<td>1</td>
-<td>-0.25</td>
-</tr>
-<tr>
-<td>Fund B</td>
-<td>2021</td>
-<td>2</td>
-<td>0.26</td>
-</tr>
-<tr>
-<td>Fund B</td>
-<td>2021</td>
-<td>3</td>
-<td>-0.05</td>
-</tr>
-<tr>
-<td>Fund C</td>
-<td>2021</td>
-<td>1</td>
-<td>0.12</td>
-</tr>
-<tr>
-<td>Fund C</td>
-<td>2021</td>
-<td>2</td>
-<td>-0.09</td>
-</tr>
-<tr>
-<td>Fund C</td>
-<td>2021</td>
-<td>3</td>
-<td>0.28</td>
-</tr>
-</table>
-
+	<table>
+		<tr>
+			<th>fund</th>
+			<th>evaluation_year</th>
+			<th>evaluation_month</th>
+			<th>return</th>
+		</tr>
+		<tr>
+			<td>Fund A</td>
+			<td>2021</td>
+			<td>1</td>
+			<td>-0.28</td>
+		</tr>
+		<tr>
+			<td>Fund A</td>
+			<td>2021</td>
+			<td>2</td>
+			<td>0.25</td>
+		</tr>
+		<tr>
+			<td>Fund A</td>
+			<td>2021</td>
+			<td>3</td>
+			<td>0.28</td>
+		</tr>
+		<tr>
+			<td>Fund B</td>
+			<td>2021</td>
+			<td>1</td>
+			<td>-0.25</td>
+		</tr>
+		<tr>
+			<td>Fund B</td>
+			<td>2021</td>
+			<td>2</td>
+			<td>0.26</td>
+		</tr>
+		<tr>
+			<td>Fund B</td>
+			<td>2021</td>
+			<td>3</td>
+			<td>-0.05</td>
+		</tr>
+		<tr>
+			<td>Fund C</td>
+			<td>2021</td>
+			<td>1</td>
+			<td>0.12</td>
+		</tr>
+		<tr>
+			<td>Fund C</td>
+			<td>2021</td>
+			<td>2</td>
+			<td>-0.09</td>
+		</tr>
+		<tr>
+			<td>Fund C</td>
+			<td>2021</td>
+			<td>3</td>
+			<td>0.28</td>
+		</tr>
+	</table>
+	
    <hr>
    <p><u><b>Task: </b></u></p>
-   <p>You would need to design a SQL query which tells which fund manager(s) generate(s) the best return on 2021 March. </p>
+   <p>You would need to design a SQL query which would produce a table which shows the average return of each fund, sorted from highest return to lowest return.</p>
    
    <p><u><b>Expected Output: </b></u><p>
-    <table>
-<tr>
-<th>manager</th>
-</tr>
-<tr>
-<td>Adam</td>
-</tr>
-<tr>
-<td>Alicia</td>
-</tr>
+   	<table>
+		<tr>
+			<th>fund</th>
+			<th>average_return</th>
+		</tr>
+		<tr>
+			<td>Fund C</td>
+			<td>0.10333333164453506</td>
+		</tr>
+		<tr>
+			<td>Fund A</td>
+			<td>0.08333333333333333</td>
+		</tr>	
+		<tr>
+			<td>Fund B</td>
+			<td>-0.013333336760600408</td>
+		</tr>
   </div>
   <div id="empty" class="empty" >
   </div>
 </body>
 </html>
+
