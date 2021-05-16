@@ -1,79 +1,151 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <title> Tech Interview Question 02 </title>
+  <title> Tech Interview Question 01 </title>
 </head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>	
 <body>
+  <div id="ide" class="ide">
+  
+   <p> <b> Please find the online IDE environments as followed: </b> </p>
+  
+  <ol>
+	<li> MySQL: <a href= "http://sqlfiddle.com/#!9/a06c9f/4" target="blank"> Click here to access MySQL environment </a> </li> <br>
+	<li> PostgreSQL: <a href= "http://sqlfiddle.com/#!17/a06c9f/1" target="blank"> Click here to access PostgreSQL environment </a> </li> <br>
+	<li> SQLite: <a href="http://sqlfiddle.com/#!7/a06c9/1" target="blank">Click here to access SQLite environment</a> </li> 
+  </ol>
+  
+  </div>
+  
+  <hr>
+  
   <div id="question" class="question">
-  
-  <b> QUESTION: </b>
+
     
-   <p>As a Natural Language Processing (NLP) analyst, you are tasked by your supervisor to 
-	design a function which would take a list of string characters as input then output 
-	the first initial of every word related to the given input. </p>
-   <p>E.g. &nbsp; 'ABC Inc' -> 'A' &nbsp;  and &nbsp; 'strawberry icecream' -> 's' </p>
+   <p>You would find the following table in your SQL online compiler:</p>
 
-	<p><u>Input:</u></p>
-	
-	<ul>
-	<li> Your input data would always be a list of string characters </li> <br>
-	<li> Your input data would not be an empty list </li> <br>
-	<li> There would not be any scenarios where there are leading/ trailing spaces in your input 
-	  data, e.g. '   a' or 'b  ' are non-existent.</li> <br>
-	<li> There would not exist any non-word characters, e.g. '!','@'  </li> <br>
-	<li> The maximum length of the input list would be capped at 10,000 </li> <br>
-	</ul>
-	
-	<p><u>Example 01: </u></p>
-	
-	<p>Given an input data of ['ABC Inc', 'strawberry icecream', 'paint Brush', 'Bull run'], 
-	your output should be:</p>
-		
-	<p>Python=>  ['A', 's', 'p', 'B']</p>
+   <p><u><b>Table: FUND_PERFORMANCE</b></u></p>
+   <p><u>Description: </u></p>
+   <p> Monthly performance of all funds. </p>
+   <p><u>Schema: </u></p>
+   <ul>
+	<li>fund 	VARCHAR(500)</li>
+    <li>evaluation_year 	INT(10)</li>
+    <li>evaluation_month 	INT(10)</li>
+    <li>fund_return 	FLOAT(12)</li>
+   </ul>
+      <p><u>Variable explanation: </u></p>
+   <ul>
+	<li><strong>fund : </strong> fund name</li>
+	<li><strong>evaluation_year : </strong> the year which the fund performance data is captured</li>
+	<li><strong>evaluation_month : </strong> the month which the fund performance data is captured</li>
+	<li><strong>fund_return : </strong> monthly return of the fund</li>
+   </ul>
+  <p><u>Table View: </u></p>
 
-	<p>Javascript=> ["A", "s", "p", "B"]</p>
-
-	<hr>
-	<p> You could choose to work out your solution with either Python or Javascript with the attached online compilers. </p>
+	<table>
+		<tr>
+			<th>fund</th>
+			<th>evaluation_year</th>
+			<th>evaluation_month</th>
+			<th>return</th>
+		</tr>
+		<tr>
+			<td>Fund A</td>
+			<td>2021</td>
+			<td>1</td>
+			<td>-0.28</td>
+		</tr>
+		<tr>
+			<td>Fund A</td>
+			<td>2021</td>
+			<td>2</td>
+			<td>0.25</td>
+		</tr>
+		<tr>
+			<td>Fund A</td>
+			<td>2021</td>
+			<td>3</td>
+			<td>0.28</td>
+		</tr>
+		<tr>
+			<td>Fund B</td>
+			<td>2021</td>
+			<td>1</td>
+			<td>-0.25</td>
+		</tr>
+		<tr>
+			<td>Fund B</td>
+			<td>2021</td>
+			<td>2</td>
+			<td>0.26</td>
+		</tr>
+		<tr>
+			<td>Fund B</td>
+			<td>2021</td>
+			<td>3</td>
+			<td>-0.05</td>
+		</tr>
+		<tr>
+			<td>Fund C</td>
+			<td>2021</td>
+			<td>1</td>
+			<td>0.12</td>
+		</tr>
+		<tr>
+			<td>Fund C</td>
+			<td>2021</td>
+			<td>2</td>
+			<td>-0.09</td>
+		</tr>
+		<tr>
+			<td>Fund C</td>
+			<td>2021</td>
+			<td>3</td>
+			<td>0.28</td>
+		</tr>
+	</table>
 	
-    <div id="python">
-		<p><b>Python- <a href="https://www.programiz.com/python-programming/online-compiler/" target="blank"> Online Python Compiler </a></b></p>
-		
-		<code>
-			def solution(x):<br>
-  
-			&nbsp; #WRITE YOUR CODE HERE <br>
-  
-			&nbsp; return answer <br><br>
-
-			test= ['ABC Inc', 'strawberry icecream', 'paint Brush', 'Bull run'] <br>
-			print(solution(test))<br>
-		</code>
-			
-	
-	</div>
-	
-	<hr>
-	
-	<div id="javascript">
-	<p><b>Javascript- <a href="https://playcode.io/new/" target="blank"> Online Javascript Compiler </a></b></p>
-	
-		<code>
-			function solution(x){<br>
-
-			&nbsp; /*WRITE YOUR CODE HERE*/ <br>
-
-			&nbsp; return answer;<br>
-			
-			}<br><br>
-
-			var test= ['ABC Inc', 'strawberry icecream', 'paint Brush', 'Bull run'] <br>
-			console.log(solution(test))<br>
-		</code>			
-	
-	</div>
-	
-  
+   <hr>
+   <p><u><b>Task: </b></u></p>
+   <p>You would need to design a SQL query which would produce a table which shows the average return of each fund, sorted from highest return to lowest return.</p>
+   
+   <p><u><b>Expected Output: </b></u><p>
+   	<table>
+		<tr>
+			<th>fund</th>
+			<th>average_return</th>
+		</tr>
+		<tr>
+			<td>Fund C</td>
+			<td>0.10333333164453506</td>
+		</tr>
+		<tr>
+			<td>Fund A</td>
+			<td>0.08333333333333333</td>
+		</tr>	
+		<tr>
+			<td>Fund B</td>
+			<td>-0.013333336760600408</td>
+		</tr>
+  </div>
+  <div id="empty" class="empty" >
   </div>
 </body>
 </html>
+
